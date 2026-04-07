@@ -135,6 +135,61 @@
             color: #00e676;
         }
 
+        /* ========== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ========== */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .lang-switch:hover {
+            border-color: rgba(0, 200, 83, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 20px;
+            transition: all 0.25s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lang-btn.active {
+            color: #00e676;
+            background: rgba(0, 230, 118, 0.15);
+            transform: scale(1.05);
+        }
+
+        .lang-divider {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 12px;
+        }
+
+        /* ========== МОБИЛЬНАЯ АДАПТАЦИЯ ========== */
+        @media (max-width: 768px) {
+            .lang-switch {
+                margin-left: 0;
+                padding: 4px 10px;
+            }
+            .lang-btn {
+                font-size: 12px;
+                padding: 3px 5px;
+            }
+        }
+
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -651,10 +706,16 @@
                     <i class="fas fa-rocket"></i> Turbo Launcher
                 </div>
                 <div class="nav-links">
-                    <a href="#home">Главная</a>
-                    <a href="#features">Возможности</a>
-                    <a href="#versions">Версии</a>
-                    <a href="#download">Скачать</a>
+                    <a data-key="nav_home" href="#home">Главная</a>
+                    <a data-key="nav_features" href="#features">Возможности</a>
+                    <a data-key="nav_versions" href="#versions">Версии</a>
+                    <a data-key="nav_download" href="#download">Скачать</a>
+                </div>
+                <!-- Переключатель языков -->
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ru">RU</button>
+                    <span class="lang-divider">/</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
                 </div>
                 <div class="menu-toggle" id="menuToggle">
                     <span></span>
@@ -666,10 +727,10 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" class="mobile-link">Главная</a>
-        <a href="#features" class="mobile-link">Возможности</a>
-        <a href="#versions" class="mobile-link">Версии</a>
-        <a href="#download" class="mobile-link">Скачать</a>
+        <a href="#home" data-key="nav_home">Главная</a>
+        <a href="#features" data-key="nav_features">Возможности</a>
+        <a href="#versions" data-key="nav_versions">Версии</a>
+        <a href="#download" data-key="nav_download">Скачать</a>
     </div>
     <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -677,23 +738,23 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-up">
-                    <h1>Новый уровень<br>игры с Turbo Launcher</h1>
-                    <p>Мощный, быстрый и красивый лаунчер для Minecraft. Автоматическая установка модов, Fabric и Forge. Поддержка всех версий от 1.7 до 1.21.</p>
+                    <h1 data-key="hero_title">Новый уровень<br>игры с Turbo Launcher</h1>
+                    <p data-key="hero_desc">Мощный, быстрый и красивый лаунчер для Minecraft. Автоматическая установка модов, Fabric и Forge. Поддержка всех версий от 1.7 до 1.21.</p>
                     <a href="https://gitflic.ru/project/turboteam/turbolaunchersetup/blob/raw?file=Turbo_Launcher_Setup.exe&inline=false&commit=fb4c923ec407f58b1f5ad491c9b1da8ecfcc1e4a" class="download-btn" id="downloadBtn">
-                        <i class="fas fa-download"></i> Скачать лаунчер
+                        <i class="fas fa-download"></i> <span data-key="download_btn">Скачать лаунчер</span>
                     </a>
                     <div class="hero-stats">
                         <div class="stat">
                             <div class="stat-number" id="onlineCount">—</div>
-                            <div class="stat-label">Игроков онлайн</div>
+                            <div class="stat-label" data-key="stat_online">Игроков онлайн</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">50+</div>
-                            <div class="stat-label">Поддерживаемых версий</div>
+                            <div class="stat-label" data-key="stat_versions">Поддерживаемых версий</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">24/7</div>
-                            <div class="stat-label">Поддержка</div>
+                            <div class="stat-label" data-key="stat_support">Поддержка</div>
                         </div>
                     </div>
                 </div>
@@ -702,8 +763,8 @@
                     <div class="floating-card">
                         <i class="fas fa-gamepad" style="font-size: 24px; color: #00e676;"></i>
                         <div>
-                            <div style="font-weight: 600;">Готов к игре</div>
-                            <div style="font-size: 12px; opacity: 0.7;">Версия 2.0.0</div>
+                            <div style="font-weight: 600;" data-key="ready_to_play">Готов к игре</div>
+                            <div style="font-size: 12px; opacity: 0.7;" data-key="version_label">Версия 2.0.0</div>
                         </div>
                     </div>
                 </div>
@@ -713,24 +774,24 @@
 
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title fade-up">Почему Turbo Launcher?</h2>
-            <p class="section-subtitle fade-up">Всё, что нужно для идеальной игры</p>
+            <h2 class="section-title fade-up" data-key="features_title">Почему Turbo Launcher?</h2>
+            <p class="section-subtitle fade-up" data-key="features_subtitle">Всё, что нужно для идеальной игры</p>
             <div class="features-grid">
-                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3>Молниеносный запуск</h3><p>Оптимизированный код и предзагрузка библиотек сокращают время запуска до минимума</p></div>
-                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-cubes"></i></div><h3>Авто-установка модов</h3><p>Sodium, Iris, Fabric API — устанавливаются автоматически с вашей версией</p></div>
-                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-memory"></i></div><h3>Гибкая настройка RAM</h3><p>Выделяйте до 32 ГБ оперативной памяти для максимальной производительности</p></div>
-                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3>Безопасность</h3><p>Все файлы проверяются на целостность, защита от вредоносного ПО</p></div>
-                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-palette"></i></div><h3>Современный дизайн</h3><p>Стеклянная морфология, плавные анимации и поддержка темной темы</p></div>
-                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-code-branch"></i></div><h3>Fabric + Forge</h3><p>Полная поддержка обоих загрузчиков модов с автоматической установкой</p></div>
+                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3 data-key="feature1_title">Молниеносный запуск</h3><p data-key="feature1_desc">Оптимизированный код и предзагрузка библиотек сокращают время запуска до минимума</p></div>
+                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-cubes"></i></div><h3 data-key="feature2_title">Авто-установка модов</h3><p data-key="feature2_desc">Sodium, Iris, Fabric API — устанавливаются автоматически с вашей версией</p></div>
+                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-memory"></i></div><h3 data-key="feature3_title">Гибкая настройка RAM</h3><p data-key="feature3_desc">Выделяйте до 32 ГБ оперативной памяти для максимальной производительности</p></div>
+                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3 data-key="feature4_title">Безопасность</h3><p data-key="feature4_desc">Все файлы проверяются на целостность, защита от вредоносного ПО</p></div>
+                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-palette"></i></div><h3 data-key="feature5_title">Современный дизайн</h3><p data-key="feature5_desc">Стеклянная морфология, плавные анимации и поддержка темной темы</p></div>
+                <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-code-branch"></i></div><h3 data-key="feature6_title">Fabric + Forge</h3><p data-key="feature6_desc">Полная поддержка обоих загрузчиков модов с автоматической установкой</p></div>
             </div>
         </div>
     </section>
 
     <section class="versions" id="versions">
         <div class="container">
-            <div class="version-badge fade-up">СОВМЕСТИМОСТЬ</div>
-            <h2 class="section-title fade-up">Поддерживаемые версии</h2>
-            <p class="section-subtitle fade-up">От классики до новинок — играйте на любой версии</p>
+            <div class="version-badge fade-up" data-key="compatibility_badge">СОВМЕСТИМОСТЬ</div>
+            <h2 class="section-title fade-up" data-key="versions_title">Поддерживаемые версии</h2>
+            <p class="section-subtitle fade-up" data-key="versions_subtitle">От классики до новинок — играйте на любой версии</p>
             <div class="version-list" id="versionList"></div>
         </div>
     </section>
@@ -738,22 +799,22 @@
     <section class="cta" id="download">
         <div class="container">
             <div class="cta-box fade-up">
-                <h2>Готовы начать?</h2>
-                <p>Скачайте Turbo Launcher прямо сейчас и погрузитесь в мир Minecraft на новом уровне</p>
+                <h2 data-key="cta_title">Готовы начать?</h2>
+                <p data-key="cta_desc">Скачайте Turbo Launcher прямо сейчас и погрузитесь в мир Minecraft на новом уровне</p>
                 <a href="https://gitflic.ru/project/turboteam/turbolaunchersetup/blob/raw?file=Turbo_Launcher_Setup.exe&inline=false&commit=fb4c923ec407f58b1f5ad491c9b1da8ecfcc1e4a" class="download-btn" id="finalDownloadBtn">
-                    <i class="fas fa-download"></i> Скачать для Windows
+                    <i class="fas fa-download"></i> <span data-key="download_windows">Скачать для Windows</span>
                 </a>
-                <p style="margin-top: 24px; font-size: 14px;"><i class="fas fa-windows"></i> Windows 10/11 | 64-bit | 500 MB свободного места</p>
-                <p style="margin-top: 16px; font-size: 12px;"><a href="#" id="licenseLink" style="color: #00e676;">Лицензионное соглашение</a></p>
+                <p style="margin-top: 24px; font-size: 14px;"><i class="fas fa-windows"></i> <span data-key="system_req">Windows 10/11 | 64-bit | 500 MB свободного места</span></p>
+                <p style="margin-top: 16px; font-size: 12px;"><a href="#" id="licenseLink" style="color: #00e676;" data-key="license_link">Лицензионное соглашение</a></p>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Turbo Launcher. Создано с ❤️ для всех игроков Minecraft</p>
+            <p data-key="footer_copyright">© 2024 Turbo Launcher. Создано с ❤️ для всех игроков Minecraft</p>
             <p style="margin-top: 12px;">
-                <a href="#" id="footerLicenseLink">Лицензия</a>
+                <a href="#" id="footerLicenseLink" data-key="license_link">Лицензия</a>
                 <a href="#" style="margin-left: 20px;">Telegram</a>
                 <a href="#" style="margin-left: 20px;">Discord</a>
                 <a href="#" style="margin-left: 20px;">GitHub</a>
@@ -763,20 +824,168 @@
 
     <div class="modal" id="licenseModal">
         <div class="modal-content">
-            <h3>📜 ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ</h3>
+            <h3 data-key="license_title">📜 ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ</h3>
             <p><strong>Turbo Launcher v2.0.0</strong></p>
-            <p>1. Лаунчер предоставляется "как есть" без каких-либо гарантий.</p>
-            <p>2. Вы имеете право использовать лаунчер для личного некоммерческого использования.</p>
-            <p>3. Запрещается модификация, декомпиляция или распространение лаунчера без разрешения автора.</p>
-            <p>4. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.</p>
-            <p>5. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта.</p>
-            <p>6. Все права на Minecraft принадлежат Mojang Studios.</p>
-            <p>7. Используя лаунчер, вы подтверждаете, что у вас есть лицензионная копия Minecraft.</p>
-            <button class="close-modal">ПРИНЯТЬ И ЗАКРЫТЬ</button>
+            <p data-key="license1">1. Лаунчер предоставляется "как есть" без каких-либо гарантий.</p>
+            <p data-key="license2">2. Вы имеете право использовать лаунчер для личного некоммерческого использования.</p>
+            <p data-key="license3">3. Запрещается модификация, декомпиляция или распространение лаунчера без разрешения автора.</p>
+            <p data-key="license4">4. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.</p>
+            <p data-key="license5">5. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта.</p>
+            <p data-key="license6">6. Все права на Minecraft принадлежат Mojang Studios.</p>
+            <p data-key="license7">7. Используя лаунчер, вы подтверждаете, что у вас есть лицензионная копия Minecraft.</p>
+            <button class="close-modal" data-key="license_accept">ПРИНЯТЬ И ЗАКРЫТЬ</button>
         </div>
     </div>
 
     <script>
+        // ========== ПЕРЕВОДЫ ==========
+        const translations = {
+            ru: {
+                nav_home: "Главная",
+                nav_features: "Возможности",
+                nav_versions: "Версии",
+                nav_download: "Скачать",
+                hero_title: "Новый уровень<br>игры с Turbo Launcher",
+                hero_desc: "Мощный, быстрый и красивый лаунчер для Minecraft. Автоматическая установка модов, Fabric и Forge. Поддержка всех версий от 1.7 до 1.21.",
+                download_btn: "Скачать лаунчер",
+                stat_online: "Игроков онлайн",
+                stat_versions: "Поддерживаемых версий",
+                stat_support: "Поддержка",
+                ready_to_play: "Готов к игре",
+                version_label: "Версия 2.0.0",
+                features_title: "Почему Turbo Launcher?",
+                features_subtitle: "Всё, что нужно для идеальной игры",
+                feature1_title: "Молниеносный запуск",
+                feature1_desc: "Оптимизированный код и предзагрузка библиотек сокращают время запуска до минимума",
+                feature2_title: "Авто-установка модов",
+                feature2_desc: "Sodium, Iris, Fabric API — устанавливаются автоматически с вашей версией",
+                feature3_title: "Гибкая настройка RAM",
+                feature3_desc: "Выделяйте до 32 ГБ оперативной памяти для максимальной производительности",
+                feature4_title: "Безопасность",
+                feature4_desc: "Все файлы проверяются на целостность, защита от вредоносного ПО",
+                feature5_title: "Современный дизайн",
+                feature5_desc: "Стеклянная морфология, плавные анимации и поддержка темной темы",
+                feature6_title: "Fabric + Forge",
+                feature6_desc: "Полная поддержка обоих загрузчиков модов с автоматической установкой",
+                compatibility_badge: "СОВМЕСТИМОСТЬ",
+                versions_title: "Поддерживаемые версии",
+                versions_subtitle: "От классики до новинок — играйте на любой версии",
+                cta_title: "Готовы начать?",
+                cta_desc: "Скачайте Turbo Launcher прямо сейчас и погрузитесь в мир Minecraft на новом уровне",
+                download_windows: "Скачать для Windows",
+                system_req: "Windows 10/11 | 64-bit | 500 MB свободного места",
+                license_link: "Лицензионное соглашение",
+                footer_copyright: "© 2024 Turbo Launcher. Создано с ❤️ для всех игроков Minecraft",
+                license_title: "📜 ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ",
+                license1: "1. Лаунчер предоставляется \"как есть\" без каких-либо гарантий.",
+                license2: "2. Вы имеете право использовать лаунчер для личного некоммерческого использования.",
+                license3: "3. Запрещается модификация, декомпиляция или распространение лаунчера без разрешения автора.",
+                license4: "4. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.",
+                license5: "5. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта.",
+                license6: "6. Все права на Minecraft принадлежат Mojang Studios.",
+                license7: "7. Используя лаунчер, вы подтверждаете, что у вас есть лицензионная копия Minecraft.",
+                license_accept: "ПРИНЯТЬ И ЗАКРЫТЬ"
+            },
+            en: {
+                nav_home: "Home",
+                nav_features: "Features",
+                nav_versions: "Versions",
+                nav_download: "Download",
+                hero_title: "New Level<br>of Game with Turbo Launcher",
+                hero_desc: "Powerful, fast and beautiful launcher for Minecraft. Automatic mod installation, Fabric and Forge support. All versions from 1.7 to 1.21.",
+                download_btn: "Download Launcher",
+                stat_online: "Players Online",
+                stat_versions: "Supported Versions",
+                stat_support: "Support",
+                ready_to_play: "Ready to Play",
+                version_label: "Version 2.0.0",
+                features_title: "Why Turbo Launcher?",
+                features_subtitle: "Everything you need for the perfect game",
+                feature1_title: "Lightning Fast Launch",
+                feature1_desc: "Optimized code and preloading of libraries reduce launch time to a minimum",
+                feature2_title: "Auto Mod Installation",
+                feature2_desc: "Sodium, Iris, Fabric API — install automatically with your version",
+                feature3_title: "Flexible RAM Settings",
+                feature3_desc: "Allocate up to 32 GB of RAM for maximum performance",
+                feature4_title: "Security",
+                feature4_desc: "All files are checked for integrity, protection against malware",
+                feature5_title: "Modern Design",
+                feature5_desc: "Glass morphism, smooth animations and dark theme support",
+                feature6_title: "Fabric + Forge",
+                feature6_desc: "Full support for both mod loaders with automatic installation",
+                compatibility_badge: "COMPATIBILITY",
+                versions_title: "Supported Versions",
+                versions_subtitle: "From classics to new releases — play on any version",
+                cta_title: "Ready to start?",
+                cta_desc: "Download Turbo Launcher right now and dive into the world of Minecraft at a new level",
+                download_windows: "Download for Windows",
+                system_req: "Windows 10/11 | 64-bit | 500 MB free space",
+                license_link: "License Agreement",
+                footer_copyright: "© 2024 Turbo Launcher. Made with ❤️ for all Minecraft players",
+                license_title: "📜 LICENSE AGREEMENT",
+                license1: "1. The launcher is provided 'as is' without any warranties.",
+                license2: "2. You have the right to use the launcher for personal non-commercial use.",
+                license3: "3. Modification, decompilation or distribution of the launcher without the author's permission is prohibited.",
+                license4: "4. The author is not responsible for any damages arising from the use of the launcher.",
+                license5: "5. The launcher automatically installs mods (Fabric API, Sodium, Iris) to improve the gaming experience.",
+                license6: "6. All rights to Minecraft belong to Mojang Studios.",
+                license7: "7. By using the launcher, you confirm that you have a licensed copy of Minecraft.",
+                license_accept: "ACCEPT AND CLOSE"
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+
+            // Обновляем активную кнопку
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Обновляем все тексты
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Обновляем hero_title (с поддержкой <br>)
+            const heroTitle = document.querySelector('[data-key="hero_title"]');
+            if (heroTitle) {
+                heroTitle.innerHTML = translations[lang].hero_title;
+            }
+
+            localStorage.setItem('turbo_launcher_lang', lang);
+        }
+
+        // Инициализация переключателя языков
+        function initLanguageSwitcher() {
+            const savedLang = localStorage.getItem('turbo_launcher_lang');
+            if (savedLang && (savedLang === 'ru' || savedLang === 'en')) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru');
+            }
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    setLanguage(btn.dataset.lang);
+                });
+            });
+        }
+
+        // Остальные функции (particles, versions, scroll, online count, modal)
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 50;
@@ -868,6 +1077,9 @@
         handleScrollAnimation();
         window.addEventListener('scroll', handleScrollAnimation);
         window.addEventListener('load', handleScrollAnimation);
+
+        // Инициализация переключателя языков
+        initLanguageSwitcher();
     </script>
 </body>
 </html>
