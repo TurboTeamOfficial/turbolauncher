@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Turbo Launcher — Скачай лаунчер для Minecraft</title>
+    
+    <!-- FAVICON (аватарка сайта) -->
+    <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/vBBPsh3s/photo-2026-02-15-18-08-30.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/vBBPsh3s/photo-2026-02-15-18-08-30.jpg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -1129,7 +1134,6 @@
             localStorage.setItem('turbo_launcher_lang', lang); 
         }
         
-        // РАБОЧИЙ СЧЁТЧИК ЧЕРЕЗ JSONBin API (как в вашем оригинале)
         async function updateOnlineCount() { 
             try { 
                 const response = await fetch(`https://api.jsonbin.io/v3/b/69cbf02c36566621a8675955/latest`, { 
