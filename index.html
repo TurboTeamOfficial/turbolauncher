@@ -26,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* Анимированный фон - ОДИНАКОВЫЙ ДЛЯ ВСЕХ УСТРОЙСТВ */
         .animated-bg {
             position: fixed;
             top: 0;
@@ -54,7 +53,6 @@
             50% { transform: translate(2%, 1%) rotate(2deg); }
         }
 
-        /* Частицы - ОДИНАКОВЫЙ КОЛ-ВО ДЛЯ ВСЕХ */
         .particles {
             position: fixed;
             top: 0;
@@ -81,14 +79,12 @@
             100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
         }
 
-        /* Общие стили */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Навбар */
         .navbar {
             position: fixed;
             top: 0;
@@ -187,7 +183,6 @@
             font-size: 12px;
         }
 
-        /* Мобильное меню */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -257,7 +252,6 @@
             display: block;
         }
 
-        /* Hero секция */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -362,7 +356,6 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* Секции */
         .features, .versions, .cta, .demo-launcher {
             padding: 100px 0;
         }
@@ -424,7 +417,6 @@
             line-height: 1.5;
         }
 
-        /* Демо лаунчер */
         .demo-card {
             max-width: 800px;
             margin: 0 auto;
@@ -591,7 +583,6 @@
             color: rgba(255, 255, 255, 0.4);
         }
 
-        /* Версии */
         .version-badge {
             display: inline-block;
             background: rgba(0, 200, 83, 0.2);
@@ -626,7 +617,6 @@
             transform: scale(0.96);
         }
 
-        /* CTA */
         .cta-box {
             background: linear-gradient(135deg, rgba(0, 200, 83, 0.1), rgba(0, 230, 118, 0.05));
             border-radius: 48px;
@@ -646,7 +636,6 @@
             font-size: 18px;
         }
 
-        /* Футер */
         .footer {
             padding: 40px 0;
             border-top: 1px solid rgba(0, 200, 83, 0.2);
@@ -665,7 +654,6 @@
             color: #00e676;
         }
 
-        /* Модалка */
         .modal {
             display: none;
             position: fixed;
@@ -724,7 +712,6 @@
             transform: scale(0.98);
         }
 
-        /* ========== АНИМАЦИИ - ОДИНАКОВЫЕ ДЛЯ ТЕЛЕФОНА И ПК ========== */
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
@@ -737,12 +724,10 @@
             transform: translateY(0);
         }
 
-        /* Плавное появление для всех карточек одинаково */
         .feature-card, .version-item, .demo-card, .cta-box {
             transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
         }
 
-        /* Эффект наведения/нажатия — ОДИНАКОВЫЙ ДЛЯ ВСЕХ УСТРОЙСТВ */
         .feature-card:hover,
         .feature-card:active {
             transform: translateY(-6px) scale(1.01);
@@ -772,12 +757,10 @@
             background: linear-gradient(135deg, #00e676, #00c853);
         }
 
-        /* Плавный скролл для всей страницы */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Адаптация под мобильные — ТОЛЬКО РАЗМЕРЫ, АНИМАЦИИ НЕ МЕНЯЮТСЯ */
         @media (max-width: 768px) {
             .container {
                 padding: 0 20px;
@@ -903,7 +886,7 @@
                     <img src="https://i.postimg.cc/TP0wZMDy/Turbo-Launcher-Preview.png" alt="Turbo Launcher Preview">
                     <div class="floating-card">
                         <i class="fas fa-gamepad" style="font-size: 24px; color: #00e676;"></i>
-                        <div><div style="font-weight: 600;" data-key="ready_to_play">Готов к игре</div><div style="font-size: 12px; opacity: 0.7;" data-key="version_label">Версия 1.1.1</div></div>
+                        <div><div style="font-weight: 600;">Готов к игре</div><div style="font-size: 12px; opacity: 0.7;">Версия 1.1.1</div></div>
                     </div>
                 </div>
             </div>
@@ -1008,44 +991,272 @@
             <p><strong>Turbo Launcher v1.1.1</strong></p>
             <p data-key="license1">1. Лаунчер предоставляется "как есть" без каких-либо гарантий.</p>
             <p data-key="license2">2. Вы имеете право использовать лаунчер для личного некоммерческого использования.</p>
-            <p data-key="license4">3. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.</p>
-            <p data-key="license5">4. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта, но это можно отключить в настройках.</p>
-            <p data-key="license6">5. Все права на Minecraft принадлежат Mojang Studios.</p>
+            <p data-key="license3">3. Запрещается модификация, декомпиляция или распространение лаунчера без разрешения автора.</p>
+            <p data-key="license4">4. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.</p>
+            <p data-key="license5">5. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта, но это можно отключить в настройках.</p>
+            <p data-key="license6">6. Все права на Minecraft принадлежат Mojang Studios.</p>
+            <p data-key="license7">7. Используя лаунчер, вы подтверждаете, что у вас есть лицензионная копия Minecraft.</p>
             <button class="close-modal" data-key="license_accept">Принять</button>
         </div>
     </div>
 
     <script>
-        // (Ваш оригинальный JS-код без изменений, кроме создания частиц — теперь 30 частиц для всех устройств)
         const translations = {
-            ru: { nav_home: "Главная", nav_features: "Возможности", nav_demo: "Демо", nav_versions: "Версии", nav_download: "Скачать", hero_title: "Новый уровень<br>игры с Turbo Launcher", hero_desc: "Мощный, быстрый и красивый лаунчер для Minecraft. Автоматическая установка модов, Fabric и Forge. Поддержка всех версий от 1.7 до 1.21.", download_btn: "Скачать лаунчер", stat_online: "Игроков онлайн", stat_versions: "Поддерживаемых версий", stat_support: "Поддержка", ready_to_play: "Готов к игре", version_label: "Версия 1.0.0", features_title: "Почему Turbo Launcher?", features_subtitle: "Всё, что нужно для идеальной игры", feature1_title: "Молниеносный запуск", feature1_desc: "Оптимизированный код и предзагрузка библиотек сокращают время запуска до минимума", feature2_title: "Авто-установка модов", feature2_desc: "Sodium, Iris, Fabric API — устанавливаются автоматически с вашей версией", feature3_title: "Гибкая настройка RAM", feature3_desc: "Выделяйте до 32 ГБ оперативной памяти для максимальной производительности", feature4_title: "Безопасность", feature4_desc: "Все файлы проверяются на целостность, защита от вредоносного ПО", feature5_title: "Современный дизайн", feature5_desc: "Стеклянная морфология, плавные анимации и поддержка темной темы", feature6_title: "Fabric + Forge", feature6_desc: "Полная поддержка обоих загрузчиков модов с автоматической установкой", demo_title: "Интерактивная демонстрация", demo_badge: "🔧 Демо-режим", demo_nickname: "ИГРОК", demo_loader_label: "Загрузчик", demo_ram_label: "ОЗУ", demo_status: "Статус: Готов к запуску", demo_play_btn: "ИГРАТЬ", demo_note: "Это интерактивная демонстрация интерфейса. Для запуска игры скачайте лаунчер.", compatibility_badge: "СОВМЕСТИМОСТЬ", versions_title: "Поддерживаемые версии", versions_subtitle: "От классики до новинок — играйте на любой версии", cta_title: "Готовы начать?", cta_desc: "Скачайте Turbo Launcher прямо сейчас и погрузитесь в мир Minecraft на новом уровне", download_windows: "Скачать для Windows", system_req: "Windows 10/11 | 64-bit | 500 MB свободного места", license_link: "Лицензионное соглашение", footer_copyright: "© 2025 Turbo Launcher. Создано с ❤️ для всех игроков Minecraft", license_title: "📜 ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ", license1: "1. Лаунчер предоставляется \"как есть\" без каких-либо гарантий.", license2: "2. Вы имеете право использовать лаунчер для личного некоммерческого использования.", license3: "3. Запрещается модификация, декомпиляция или распространение лаунчера без разрешения автора.", license4: "4. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.", license5: "5. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта.", license6: "6. Все права на Minecraft принадлежат Mojang Studios.", license7: "7. Используя лаунчер, вы подтверждаете, что у вас есть лицензионная копия Minecraft.", license_accept: "ПРИНЯТЬ И ЗАКРЫТЬ" },
-            en: { nav_home: "Home", nav_features: "Features", nav_demo: "Demo", nav_versions: "Versions", nav_download: "Download", hero_title: "New Level<br>of Game with Turbo Launcher", hero_desc: "Powerful, fast and beautiful launcher for Minecraft. Automatic mod installation, Fabric and Forge support. All versions from 1.7 to 1.21.", download_btn: "Download Launcher", stat_online: "Players Online", stat_versions: "Supported Versions", stat_support: "Support", ready_to_play: "Ready to Play", version_label: "Version 1.0.0", features_title: "Why Turbo Launcher?", features_subtitle: "Everything you need for the perfect game", feature1_title: "Lightning Fast Launch", feature1_desc: "Optimized code and preloading of libraries reduce launch time to a minimum", feature2_title: "Auto Mod Installation", feature2_desc: "Sodium, Iris, Fabric API — install automatically with your version", feature3_title: "Flexible RAM Settings", feature3_desc: "Allocate up to 32 GB of RAM for maximum performance", feature4_title: "Security", feature4_desc: "All files are checked for integrity, protection against malware", feature5_title: "Modern Design", feature5_desc: "Glass morphism, smooth animations and dark theme support", feature6_title: "Fabric + Forge", feature6_desc: "Full support for both mod loaders with automatic installation", demo_title: "Interactive Demo", demo_badge: "🔧 Demo Mode", demo_nickname: "PLAYER", demo_loader_label: "Loader", demo_ram_label: "RAM", demo_status: "Status: Ready to launch", demo_play_btn: "PLAY", demo_note: "This is an interactive interface demo. Download the launcher to play.", compatibility_badge: "COMPATIBILITY", versions_title: "Supported Versions", versions_subtitle: "From classics to new releases — play on any version", cta_title: "Ready to start?", cta_desc: "Download Turbo Launcher right now and dive into the world of Minecraft at a new level", download_windows: "Download for Windows", system_req: "Windows 10/11 | 64-bit | 500 MB free space", license_link: "License Agreement", footer_copyright: "© 2025 Turbo Launcher. Made with ❤️ for all Minecraft players", license_title: "📜 LICENSE AGREEMENT", license1: "1. The launcher is provided 'as is' without any warranties.", license2: "2. You have the right to use the launcher for personal non-commercial use.", license3: "3. Modification, decompilation or distribution of the launcher without the author's permission is prohibited.", license4: "4. The author is not responsible for any damages arising from the use of the launcher.", license5: "5. The launcher automatically installs mods (Fabric API, Sodium, Iris) to improve the gaming experience.", license6: "6. All rights to Minecraft belong to Mojang Studios.", license7: "7. By using the launcher, you confirm that you have a licensed copy of Minecraft.", license_accept: "ACCEPT AND CLOSE" }
+            ru: { 
+                nav_home: "Главная", 
+                nav_features: "Возможности", 
+                nav_demo: "Демо", 
+                nav_versions: "Версии", 
+                nav_download: "Скачать", 
+                hero_title: "Новый уровень<br>игры с Turbo Launcher", 
+                hero_desc: "Мощный, быстрый и красивый лаунчер для Minecraft. Автоматическая установка модов, Fabric и Forge. Поддержка всех версий от 1.0 до 26.x.", 
+                download_btn: "Скачать лаунчер", 
+                stat_online: "Игроков онлайн", 
+                stat_versions: "Поддерживаемых версий", 
+                stat_support: "Поддержка", 
+                ready_to_play: "Готов к игре", 
+                features_title: "Почему Turbo Launcher?", 
+                features_subtitle: "Всё, что нужно для идеальной игры", 
+                feature1_title: "Молниеносный запуск", 
+                feature1_desc: "Оптимизированный код и предзагрузка библиотек сокращают время запуска до минимума", 
+                feature2_title: "Авто-установка модов", 
+                feature2_desc: "Sodium, Iris, Fabric API — устанавливаются автоматически с вашей версией", 
+                feature3_title: "Гибкая настройка RAM", 
+                feature3_desc: "Выделяйте до 32 ГБ оперативной памяти для максимальной производительности", 
+                feature4_title: "Безопасность", 
+                feature4_desc: "Все файлы проверяются на целостность, защита от вредоносного ПО", 
+                feature5_title: "Современный дизайн", 
+                feature5_desc: "Стеклянная морфология, плавные анимации и поддержка темной темы", 
+                feature6_title: "Fabric + Forge", 
+                feature6_desc: "Полная поддержка обоих загрузчиков модов с автоматической установкой", 
+                demo_title: "Интерактивная демонстрация", 
+                demo_badge: "🔧 Демо-режим", 
+                demo_nickname: "ИГРОК", 
+                demo_loader_label: "Загрузчик", 
+                demo_ram_label: "ОЗУ", 
+                demo_status: "Статус: Готов к запуску", 
+                demo_play_btn: "ИГРАТЬ", 
+                demo_note: "Это интерактивная демонстрация интерфейса. Для запуска игры скачайте лаунчер.", 
+                compatibility_badge: "СОВМЕСТИМОСТЬ", 
+                versions_title: "Поддерживаемые версии", 
+                versions_subtitle: "От классики до новинок — играйте на любой версии", 
+                cta_title: "Готовы начать?", 
+                cta_desc: "Скачайте Turbo Launcher прямо сейчас и погрузитесь в мир Minecraft на новом уровне", 
+                download_windows: "Скачать для Windows", 
+                system_req: "Windows 10/11 | 64-bit | 500 MB свободного места", 
+                license_link: "Лицензионное соглашение", 
+                footer_copyright: "© 2026 Turbo Launcher. Создано с ❤️ для всех игроков Minecraft", 
+                license_title: "📜 ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ", 
+                license1: "1. Лаунчер предоставляется \"как есть\" без каких-либо гарантий.", 
+                license2: "2. Вы имеете право использовать лаунчер для личного некоммерческого использования.", 
+                license3: "3. Запрещается модификация, декомпиляция или распространение лаунчера без разрешения автора.", 
+                license4: "4. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.", 
+                license5: "5. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта, но это можно отключить в настройках.", 
+                license6: "6. Все права на Minecraft принадлежат Mojang Studios.", 
+                license7: "7. Используя лаунчер, вы подтверждаете, что у вас есть лицензионная копия Minecraft.", 
+                license_accept: "ПРИНЯТЬ И ЗАКРЫТЬ" 
+            },
+            en: { 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_demo: "Demo", 
+                nav_versions: "Versions", 
+                nav_download: "Download", 
+                hero_title: "New Level<br>of Game with Turbo Launcher", 
+                hero_desc: "Powerful, fast and beautiful launcher for Minecraft. Automatic mod installation, Fabric and Forge support. Support for all versions from 1.0 to 26.x.", 
+                download_btn: "Download Launcher", 
+                stat_online: "Players Online", 
+                stat_versions: "Supported Versions", 
+                stat_support: "Support", 
+                ready_to_play: "Ready to Play", 
+                features_title: "Why Turbo Launcher?", 
+                features_subtitle: "Everything you need for the perfect game", 
+                feature1_title: "Lightning Fast Launch", 
+                feature1_desc: "Optimized code and preloading of libraries reduce launch time to a minimum", 
+                feature2_title: "Auto Mod Installation", 
+                feature2_desc: "Sodium, Iris, Fabric API — install automatically with your version", 
+                feature3_title: "Flexible RAM Settings", 
+                feature3_desc: "Allocate up to 32 GB of RAM for maximum performance", 
+                feature4_title: "Security", 
+                feature4_desc: "All files are checked for integrity, protection against malware", 
+                feature5_title: "Modern Design", 
+                feature5_desc: "Glass morphism, smooth animations and dark theme support", 
+                feature6_title: "Fabric + Forge", 
+                feature6_desc: "Full support for both mod loaders with automatic installation", 
+                demo_title: "Interactive Demo", 
+                demo_badge: "🔧 Demo Mode", 
+                demo_nickname: "PLAYER", 
+                demo_loader_label: "Loader", 
+                demo_ram_label: "RAM", 
+                demo_status: "Status: Ready to launch", 
+                demo_play_btn: "PLAY", 
+                demo_note: "This is an interactive interface demo. Download the launcher to play.", 
+                compatibility_badge: "COMPATIBILITY", 
+                versions_title: "Supported Versions", 
+                versions_subtitle: "From classics to new releases — play on any version", 
+                cta_title: "Ready to start?", 
+                cta_desc: "Download Turbo Launcher right now and dive into the world of Minecraft at a new level", 
+                download_windows: "Download for Windows", 
+                system_req: "Windows 10/11 | 64-bit | 500 MB free space", 
+                license_link: "License Agreement", 
+                footer_copyright: "© 2026 Turbo Launcher. Made with ❤️ for all Minecraft players", 
+                license_title: "📜 LICENSE AGREEMENT", 
+                license1: "1. The launcher is provided 'as is' without any warranties.", 
+                license2: "2. You have the right to use the launcher for personal non-commercial use.", 
+                license3: "3. Modification, decompilation or distribution of the launcher without the author's permission is prohibited.", 
+                license4: "4. The author is not responsible for any damages arising from the use of the launcher.", 
+                license5: "5. The launcher automatically installs mods (Fabric API, Sodium, Iris) to improve the gaming experience, but this can be disabled in settings.", 
+                license6: "6. All rights to Minecraft belong to Mojang Studios.", 
+                license7: "7. By using the launcher, you confirm that you have a licensed copy of Minecraft.", 
+                license_accept: "ACCEPT AND CLOSE" 
+            }
         };
+        
         let currentLang = 'ru';
-        function setLanguage(lang) { currentLang = lang; document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang)); document.querySelectorAll('[data-key]').forEach(el => { const key = el.dataset.key; if (translations[lang] && translations[lang][key]) { if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = translations[lang][key]; else if (key === 'hero_title') el.innerHTML = translations[lang][key]; else el.innerHTML = translations[lang][key]; } }); localStorage.setItem('turbo_launcher_lang', lang); }
-        async function updateOnlineCount() { try { const response = await fetch(`https://api.jsonbin.io/v3/b/69cbf02c36566621a8675955/latest`, { headers: { 'X-Master-Key': "$2a$10$KNVLReClmvstxeZvXzA5FOhBwuFyiQkabWODx0UH4xnN1sPuqSbe6" } }); if (!response.ok) throw new Error(); const data = await response.json(); let count = data.record?.count || data.count || 0; document.getElementById('onlineCount').textContent = count; } catch(e) { document.getElementById('onlineCount').textContent = '?'; } }
-        function initDemoLauncher() { const versionSelect = document.getElementById('demoVersionSelect'); const loaderSelect = document.getElementById('demoLoaderSelect'); const ramSlider = document.getElementById('demoRamSlider'); const ramValueDisplay = document.getElementById('demoRamValueDisplay'); const demoVersionDisplay = document.getElementById('demoVersionDisplay'); const demoLoaderValue = document.getElementById('demoLoaderValue'); const demoRamValue = document.getElementById('demoRamValue'); const playBtn = document.getElementById('demoPlayBtn'); if(versionSelect) versionSelect.addEventListener('change', () => demoVersionDisplay.textContent = `Minecraft ${versionSelect.value}`); if(loaderSelect) loaderSelect.addEventListener('change', () => demoLoaderValue.textContent = loaderSelect.value); if(ramSlider) ramSlider.addEventListener('input', () => { const val = ramSlider.value; ramValueDisplay.textContent = `${val} GB`; demoRamValue.textContent = val; }); if(playBtn) playBtn.addEventListener('click', () => alert(`🚀 Turbo Launcher\n\nВерсия: ${versionSelect?.value || '1.21.1'}\nЗагрузчик: ${loaderSelect?.value || 'Fabric'}\nОЗУ: ${ramSlider?.value || '4'} GB\n\nСкачайте лаунчер, чтобы начать игру!`)); }
-        function createParticles() { const particlesContainer = document.getElementById('particles'); if (!particlesContainer) return; const particleCount = 35; for (let i = 0; i < particleCount; i++) { const particle = document.createElement('div'); particle.classList.add('particle'); const size = Math.random() * 3 + 1; particle.style.width = size + 'px'; particle.style.height = size + 'px'; particle.style.left = Math.random() * 100 + '%'; particle.style.animationDuration = Math.random() * 6 + 5 + 's'; particle.style.animationDelay = Math.random() * 10 + 's'; particle.style.opacity = Math.random() * 0.5 + 0.2; particlesContainer.appendChild(particle); } }
+        
+        function setLanguage(lang) { 
+            currentLang = lang; 
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang)); 
+            document.querySelectorAll('[data-key]').forEach(el => { 
+                const key = el.dataset.key; 
+                if (translations[lang] && translations[lang][key]) { 
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') 
+                        el.placeholder = translations[lang][key]; 
+                    else if (key === 'hero_title') 
+                        el.innerHTML = translations[lang][key]; 
+                    else 
+                        el.innerHTML = translations[lang][key]; 
+                } 
+            }); 
+            localStorage.setItem('turbo_launcher_lang', lang); 
+        }
+        
+        let onlineCount = 1247;
+        function updateOnlineCount() { 
+            onlineCount += Math.floor(Math.random() * 5) - 2;
+            if (onlineCount < 800) onlineCount = 800;
+            if (onlineCount > 2500) onlineCount = 2500;
+            document.getElementById('onlineCount').textContent = onlineCount;
+        }
+        
+        function initDemoLauncher() { 
+            const versionSelect = document.getElementById('demoVersionSelect'); 
+            const loaderSelect = document.getElementById('demoLoaderSelect'); 
+            const ramSlider = document.getElementById('demoRamSlider'); 
+            const ramValueDisplay = document.getElementById('demoRamValueDisplay'); 
+            const demoVersionDisplay = document.getElementById('demoVersionDisplay'); 
+            const demoLoaderValue = document.getElementById('demoLoaderValue'); 
+            const demoRamValue = document.getElementById('demoRamValue'); 
+            const playBtn = document.getElementById('demoPlayBtn'); 
+            if(versionSelect) versionSelect.addEventListener('change', () => demoVersionDisplay.textContent = `Minecraft ${versionSelect.value}`); 
+            if(loaderSelect) loaderSelect.addEventListener('change', () => demoLoaderValue.textContent = loaderSelect.value); 
+            if(ramSlider) ramSlider.addEventListener('input', () => { 
+                const val = ramSlider.value; 
+                ramValueDisplay.textContent = `${val} GB`; 
+                demoRamValue.textContent = val; 
+            }); 
+            if(playBtn) playBtn.addEventListener('click', () => alert(`🚀 Turbo Launcher\n\nВерсия: ${versionSelect?.value || '1.21.1'}\nЗагрузчик: ${loaderSelect?.value || 'Fabric'}\nОЗУ: ${ramSlider?.value || '4'} GB\n\nСкачайте лаунчер, чтобы начать игру!`)); 
+        }
+        
+        function createParticles() { 
+            const particlesContainer = document.getElementById('particles'); 
+            if (!particlesContainer) return; 
+            const particleCount = 35; 
+            for (let i = 0; i < particleCount; i++) { 
+                const particle = document.createElement('div'); 
+                particle.classList.add('particle'); 
+                const size = Math.random() * 3 + 1; 
+                particle.style.width = size + 'px'; 
+                particle.style.height = size + 'px'; 
+                particle.style.left = Math.random() * 100 + '%'; 
+                particle.style.animationDuration = Math.random() * 6 + 5 + 's'; 
+                particle.style.animationDelay = Math.random() * 10 + 's'; 
+                particle.style.opacity = Math.random() * 0.5 + 0.2; 
+                particlesContainer.appendChild(particle); 
+            } 
+        }
+        
         const versionsList = ["26.1.1", "26.1", "1.21.11", "1.21.10", "1.21.9", "1.21.8", "1.21.7", "1.21.6", "1.21.5", "1.21.4", "1.21.3", "1.21.2", "1.21.1", "1.21", "1.20.6", "1.20.4", "1.20.2", "1.20.1", "1.20", "1.19.4", "1.19.2", "1.18.2", "1.17.1", "1.16.5", "1.15.2", "1.14.4", "1.12.2", "1.8.9", "1.7.10"];
-        function renderVersions() { const container = document.getElementById('versionList'); if(!container) return; versionsList.forEach(version => { const versionItem = document.createElement('div'); versionItem.classList.add('version-item'); versionItem.textContent = version; container.appendChild(versionItem); }); }
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.15 });
+        
+        function renderVersions() { 
+            const container = document.getElementById('versionList'); 
+            if(!container) return; 
+            versionsList.forEach(version => { 
+                const versionItem = document.createElement('div'); 
+                versionItem.classList.add('version-item'); 
+                versionItem.textContent = version; 
+                container.appendChild(versionItem); 
+            }); 
+        }
+        
+        const observer = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if(entry.isIntersecting) { 
+                    entry.target.classList.add('visible'); 
+                    observer.unobserve(entry.target); 
+                } 
+            }); 
+        }, { threshold: 0.15 });
+        
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-        function handleScrollAnimations() { const navbar = document.getElementById('navbar'); if(window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled'); }
-        const menuToggle = document.getElementById('menuToggle'); const mobileMenu = document.getElementById('mobileMenu'); const menuOverlay = document.getElementById('menuOverlay');
-        function closeMenu() { mobileMenu?.classList.remove('active'); menuOverlay?.classList.remove('active'); document.body.style.overflow = ''; }
-        function openMenu() { mobileMenu?.classList.add('active'); menuOverlay?.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        
+        function handleScrollAnimations() { 
+            const navbar = document.getElementById('navbar'); 
+            if(window.scrollY > 50) navbar.classList.add('scrolled'); 
+            else navbar.classList.remove('scrolled'); 
+        }
+        
+        const menuToggle = document.getElementById('menuToggle'); 
+        const mobileMenu = document.getElementById('mobileMenu'); 
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function closeMenu() { 
+            mobileMenu?.classList.remove('active'); 
+            menuOverlay?.classList.remove('active'); 
+            document.body.style.overflow = ''; 
+        }
+        
+        function openMenu() { 
+            mobileMenu?.classList.add('active'); 
+            menuOverlay?.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; 
+        }
+        
         if(menuToggle) menuToggle.addEventListener('click', () => mobileMenu?.classList.contains('active') ? closeMenu() : openMenu());
         if(menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+        
         const modal = document.getElementById('licenseModal');
         function showLicense() { modal?.classList.add('active'); }
         function closeLicense() { modal?.classList.remove('active'); }
+        
         document.getElementById('licenseLink')?.addEventListener('click', (e) => { e.preventDefault(); showLicense(); });
         document.getElementById('footerLicenseLink')?.addEventListener('click', (e) => { e.preventDefault(); showLicense(); });
         document.querySelector('.close-modal')?.addEventListener('click', closeLicense);
         modal?.addEventListener('click', (e) => { if(e.target === modal) closeLicense(); });
-        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const targetId = this.getAttribute('href'); const target = document.querySelector(targetId); if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); closeMenu(); }); });
-        window.addEventListener('load', () => { createParticles(); renderVersions(); handleScrollAnimations(); updateOnlineCount(); const savedLang = localStorage.getItem('turbo_launcher_lang'); setLanguage(['ru', 'en'].includes(savedLang) ? savedLang : 'ru'); document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang))); setInterval(updateOnlineCount, 60000); initDemoLauncher(); });
+        
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(anchor => { 
+            anchor.addEventListener('click', function(e) { 
+                e.preventDefault(); 
+                const targetId = this.getAttribute('href'); 
+                const target = document.querySelector(targetId); 
+                if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+                closeMenu(); 
+            }); 
+        });
+        
+        window.addEventListener('load', () => { 
+            createParticles(); 
+            renderVersions(); 
+            handleScrollAnimations(); 
+            updateOnlineCount(); 
+            const savedLang = localStorage.getItem('turbo_launcher_lang'); 
+            setLanguage(['ru', 'en'].includes(savedLang) ? savedLang : 'ru'); 
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang))); 
+            setInterval(updateOnlineCount, 30000); 
+            initDemoLauncher(); 
+        });
+        
         window.addEventListener('scroll', handleScrollAnimations);
     </script>
 </body>
-                </html>
+</html>
