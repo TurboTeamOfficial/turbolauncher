@@ -991,11 +991,9 @@
             <p><strong>Turbo Launcher v1.1.1</strong></p>
             <p data-key="license1">1. Лаунчер предоставляется "как есть" без каких-либо гарантий.</p>
             <p data-key="license2">2. Вы имеете право использовать лаунчер для личного некоммерческого использования.</p>
-            <p data-key="license3">3. Запрещается модификация, декомпиляция или распространение лаунчера без разрешения автора.</p>
-            <p data-key="license4">4. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.</p>
-            <p data-key="license5">5. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта, но это можно отключить в настройках.</p>
-            <p data-key="license6">6. Все права на Minecraft принадлежат Mojang Studios.</p>
-            <p data-key="license7">7. Используя лаунчер, вы подтверждаете, что у вас есть лицензионная копия Minecraft.</p>
+            <p data-key="license4">3. Автор не несет ответственности за возможные убытки, возникшие в результате использования лаунчера.</p>
+            <p data-key="license5">4. Лаунчер автоматически устанавливает моды (Fabric API, Sodium, Iris) для улучшения игрового опыта, но это можно отключить в настройках.</p>
+            <p data-key="license6">5. Все права на Minecraft принадлежат Mojang Studios.</p>
             <button class="close-modal" data-key="license_accept">Принять</button>
         </div>
     </div>
@@ -1131,12 +1129,19 @@
             localStorage.setItem('turbo_launcher_lang', lang); 
         }
         
-        let onlineCount = 1247;
-        function updateOnlineCount() { 
-            onlineCount += Math.floor(Math.random() * 5) - 2;
-            if (onlineCount < 800) onlineCount = 800;
-            if (onlineCount > 2500) onlineCount = 2500;
-            document.getElementById('onlineCount').textContent = onlineCount;
+        // РАБОЧИЙ СЧЁТЧИК ЧЕРЕЗ JSONBin API (как в вашем оригинале)
+        async function updateOnlineCount() { 
+            try { 
+                const response = await fetch(`https://api.jsonbin.io/v3/b/69cbf02c36566621a8675955/latest`, { 
+                    headers: { 'X-Master-Key': "$2a$10$KNVLReClmvstxeZvXzA5FOhBwuFyiQkabWODx0UH4xnN1sPuqSbe6" } 
+                }); 
+                if (!response.ok) throw new Error(); 
+                const data = await response.json(); 
+                let count = data.record?.count || data.count || 0; 
+                document.getElementById('onlineCount').textContent = count; 
+            } catch(e) { 
+                document.getElementById('onlineCount').textContent = '?'; 
+            } 
         }
         
         function initDemoLauncher() { 
@@ -1252,7 +1257,7 @@
             const savedLang = localStorage.getItem('turbo_launcher_lang'); 
             setLanguage(['ru', 'en'].includes(savedLang) ? savedLang : 'ru'); 
             document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang))); 
-            setInterval(updateOnlineCount, 30000); 
+            setInterval(updateOnlineCount, 60000); 
             initDemoLauncher(); 
         });
         
